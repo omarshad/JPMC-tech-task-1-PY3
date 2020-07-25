@@ -22,9 +22,11 @@ import urllib.request
 import time
 import json
 import random
+import yfinance as yf
 
 # Server API URLs
-QUERY = "http://localhost:8080/query?id={}"
+QUERY="yf.Ticker"
+#QUERY = "http://localhost:8080/query?id={}"
 
 # 500 server request
 N = 500
@@ -32,6 +34,7 @@ N = 500
 def getDataPoint(quote):
 	""" Produce all of the needed values to generate a datapoint """
 	""" ------------- Update this function ------------- """
+
 	stock = quote['stock']
 	bid_price = float(quote['top_bid']['price'])
 	ask_price = float(quote['top_ask']['price'])
